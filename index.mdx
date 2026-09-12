@@ -65,7 +65,7 @@ export const DocCard = ({ icon, title, href, children }) => (
     </p>
     <div className="flex flex-wrap gap-3">
       <a
-        href="/getting-started/overview"
+        href="/getting-started"
         className="inline-flex items-center rounded-full bg-[#FF4A1C] hover:bg-[#C3350F] px-6 py-3 font-semibold text-[#F3EFE8] no-underline transition-colors"
       >
         Get started
@@ -85,7 +85,7 @@ export const DocCard = ({ icon, title, href, children }) => (
     Explore the docs
   </h2>
   <div className="mt-6 grid gap-4 sm:grid-cols-2">
-    <DocCard icon={<Icon icon="rocket" size={20} color="#FF4A1C" />} title="Getting started" href="/getting-started/overview">
+    <DocCard icon={<Icon icon="rocket" size={20} color="#FF4A1C" />} title="Getting started" href="/getting-started">
       Invite Chirper, create your channels, and run setup.
     </DocCard>
     <DocCard icon={<Icon icon="sparkles" size={20} color="#FF4A1C" />} title="Features" href="/features/overview">
@@ -151,7 +151,9 @@ export const DocCard = ({ icon, title, href, children }) => (
       </p>
     </div>
     <a
-      href="/getting-started/invite-chirper"
+      href="https://discord.com/oauth2/authorize?client_id=1533344680807497900"
+      target="_blank"
+      rel="noopener noreferrer"
       className="inline-flex shrink-0 items-center self-start md:self-auto rounded-full bg-[#111112] hover:bg-[#F3EFE8] px-6 py-3 font-semibold text-[#F3EFE8] hover:text-[#111112] no-underline transition-colors"
     >
       Invite Chirper
