@@ -1,0 +1,160 @@
+---
+title: "Home"
+description: "The Social Media Platform Built Directly Into Discord."
+icon: "house"
+mode: "custom"
+---
+
+export const RotatingWord = ({ words }) => {
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    let swap;
+    const timer = setInterval(() => {
+      setVisible(false);
+      swap = setTimeout(() => {
+        setIndex((current) => (current + 1) % words.length);
+        setVisible(true);
+      }, 300);
+    }, 2400);
+    return () => {
+      clearInterval(timer);
+      clearTimeout(swap);
+    };
+  }, [words.length]);
+  return (
+    <span
+      className={`inline-block transition-all duration-300 motion-reduce:transition-none ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
+    >
+      {words[index]}
+    </span>
+  );
+};
+
+export const DocCard = ({ icon, title, href, children }) => (
+  <a
+    href={href}
+    className="group block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10 hover:border-[#FF4A1C] dark:hover:border-[#FF4A1C] p-6 no-underline transition-colors"
+  >
+    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FF4A1C]/10">{icon}</span>
+    <p className="mt-3 mb-0 text-lg font-semibold text-[#111112] dark:text-[#F3EFE8] group-hover:text-[#FF4A1C]">
+      {title}
+    </p>
+    <p className="mt-1 mb-0 text-[#111112]/60 dark:text-[#F3EFE8]/60">{children}</p>
+  </a>
+);
+
+<div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 lg:pt-16">
+  <h1 className="sr-only">Chirper: The Social Media Platform Built Directly Into Discord</h1>
+  <img
+    src="/images/home/hero-light.jpg"
+    alt="The Social Media Platform Built Directly Into Discord."
+    className="block dark:hidden w-full rounded-3xl border border-[#111112]/10"
+    noZoom
+  />
+  <img
+    src="/images/home/hero-dark.jpg"
+    alt="This is where every post starts a conversation."
+    className="hidden dark:block w-full rounded-3xl border border-[#F3EFE8]/10"
+    noZoom
+  />
+
+  <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+    <p className="m-0 text-lg sm:text-xl text-[#111112]/70 dark:text-[#F3EFE8]/70 max-w-xl">
+      Learn how to set up Chirper, get around its features, and use every command.
+    </p>
+    <div className="flex flex-wrap gap-3">
+      <a
+        href="/getting-started/overview"
+        className="inline-flex items-center rounded-full bg-[#FF4A1C] hover:bg-[#C3350F] px-6 py-3 font-semibold text-[#F3EFE8] no-underline transition-colors"
+      >
+        Get started
+      </a>
+      <a
+        href="/features/overview"
+        className="inline-flex items-center rounded-full border border-[#111112]/20 dark:border-[#F3EFE8]/20 hover:border-[#FF4A1C] dark:hover:border-[#FF4A1C] px-6 py-3 font-semibold text-[#111112] dark:text-[#F3EFE8] no-underline transition-colors"
+      >
+        Explore features
+      </a>
+    </div>
+  </div>
+</div>
+
+<div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20">
+  <h2 className="m-0 text-3xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">
+    Explore the docs
+  </h2>
+  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+    <DocCard icon={<Icon icon="rocket" size={20} color="#FF4A1C" />} title="Getting started" href="/getting-started/overview">
+      Invite Chirper, create your channels, and run setup.
+    </DocCard>
+    <DocCard icon={<Icon icon="sparkles" size={20} color="#FF4A1C" />} title="Features" href="/features/overview">
+      An overview of everything Chirper can do.
+    </DocCard>
+    <DocCard icon={<Icon icon="user-gear" size={20} color="#FF4A1C" />} title="Account management" href="/features/account-management">
+      Create and manage your accounts, and view other profiles.
+    </DocCard>
+    <DocCard icon={<Icon icon="terminal" size={20} color="#FF4A1C" />} title="Commands" href="/commands/overview">
+      Every command and how it works.
+    </DocCard>
+  </div>
+</div>
+
+<div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20">
+  <h2 className="m-0 text-3xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">
+    Built for your community
+  </h2>
+  <div className="mt-6 grid gap-6 md:grid-cols-2">
+    <a href="/features/internet" className="group block no-underline">
+      <div className="overflow-hidden rounded-3xl border border-[#111112]/10 dark:border-[#F3EFE8]/10">
+        <img
+          src="/images/home/internet.jpg"
+          alt="The Social Media Platform Built Directly Into Discord."
+          className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
+          noZoom
+        />
+      </div>
+      <p className="mt-4 mb-0 text-xl font-bold text-[#111112] dark:text-[#F3EFE8] group-hover:text-[#FF4A1C]">
+        Internet
+      </p>
+      <p className="mt-1 mb-0 text-[#111112]/60 dark:text-[#F3EFE8]/60">
+        Post, reply, and follow the conversation.
+      </p>
+    </a>
+    <a href="/features/marketplace" className="group block no-underline">
+      <div className="overflow-hidden rounded-3xl border border-[#111112]/10 dark:border-[#F3EFE8]/10">
+        <img
+          src="/images/home/marketplace.jpg"
+          alt="Buy, sell or trade. We make marketplace simple."
+          className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
+          noZoom
+        />
+      </div>
+      <p className="mt-4 mb-0 text-xl font-bold text-[#111112] dark:text-[#F3EFE8] group-hover:text-[#FF4A1C]">
+        Marketplace
+      </p>
+      <p className="mt-1 mb-0 text-[#111112]/60 dark:text-[#F3EFE8]/60">
+        Buy, sell, or trade with other members.
+      </p>
+    </a>
+  </div>
+</div>
+
+<div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+  <div className="rounded-3xl bg-[#FF4A1C] px-8 py-10 sm:px-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div>
+      <p className="m-0 text-3xl font-bold tracking-tight text-[#F3EFE8]">
+        Run a <RotatingWord words={["Discord", "roleplay", "community", "gaming"]} /> server?
+      </p>
+      <p className="mt-2 mb-0 text-lg text-[#F3EFE8]/85">
+        Bring Chirper to your community in a few minutes.
+      </p>
+    </div>
+    <a
+      href="/getting-started/invite-chirper"
+      className="inline-flex shrink-0 items-center self-start md:self-auto rounded-full bg-[#111112] hover:bg-[#F3EFE8] px-6 py-3 font-semibold text-[#F3EFE8] hover:text-[#111112] no-underline transition-colors"
+    >
+      Invite Chirper
+    </a>
+  </div>
+</div>

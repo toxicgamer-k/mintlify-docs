@@ -1,0 +1,4 @@
+Ivory - #F3EFE8
+Carbon Black - #111112
+Flame Orange - #FF4A1C
+Burnt Ember - #FF4A1C

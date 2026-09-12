@@ -1,72 +1,73 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Chirper",
+  "description": "The Social Media Platform Built Directly Into Discord.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#FF4A1C",
+    "light": "#FF4A1C",
+    "dark": "#C3350F"
   },
-  "favicon": "/favicon.svg",
+  "background": {
+    "color": {
+      "light": "#F3EFE8",
+      "dark": "#111112"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Inter Tight",
+      "weight": 700
+    },
+    "body": {
+      "family": "Geist",
+      "source": "/fonts/geist-latin.woff2",
+      "format": "woff2"
+    }
+  },
+  "favicon": "/favicon.png",
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
   "navigation": {
-    "pages": [
+    "groups": [
+      {
+        "group": "Home",
+        "pages": ["index"]
+      },
       {
         "group": "Getting Started",
         "pages": [
-          "index",
-          "quickstart"
+          "getting-started/overview",
+          "getting-started/invite-chirper",
+          "getting-started/create-channels",
+          "getting-started/run-setup"
         ]
+      },
+      {
+        "group": "Features",
+        "pages": [
+          "features/overview",
+          "features/internet",
+          "features/marketplace",
+          "features/account-management"
+        ]
+      },
+      {
+        "group": "Commands",
+        "pages": ["commands/overview"]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    ]
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Invite Chirper",
+      "href": "/getting-started/invite-chirper"
     }
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "options": ["copy", "view", "chatgpt", "claude", "perplexity"]
   }
 }
