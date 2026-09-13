@@ -56,11 +56,18 @@
       {
         "group": "Commands",
         "pages": [
-          "commands/overview"
+          "commands"
         ]
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/commands/overview",
+      "destination": "/commands",
+      "permanent": true
+    }
+  ],
   "navbar": {
     "primary": {
       "type": "button",
