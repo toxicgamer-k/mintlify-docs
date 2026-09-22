@@ -7,3 +7,152 @@ icon: "rocket"
 <Note>
   This page is for **server admins** who want to invite Chirper to their Discord server. If you just want to use Chirper, head to [Features](/features/overview).
 </Note>
+
+Welcome to the Chirper getting started guide! This guide walks you through inviting Chirper to your Discord server and completing the initial setup.
+
+Whether you're setting up Chirper for the first time or configuring it for a new server, we'll take you through each step so everything is ready for your community. By the end of this guide, Chirper will be fully configured and ready for your members to use.
+
+## Step 1 — Invite Chirper
+
+Before you can configure Chirper, you need to invite the bot to your Discord server.
+
+<Card title="Invite Chirper" icon="discord" href="https://discord.com/oauth2/authorize?client_id=1533344680807497900" horizontal>
+  Add Chirper to your Discord server.
+</Card>
+
+When inviting Chirper, review the permissions requested and continue through Discord's authorization process.
+
+Once you have authorized Chirper, return to your Discord server and check the member list to confirm that Chirper has joined.
+
+## Step 2 — Enable Community
+
+Before continuing with setup, you must enable **Community** on your Discord server. Community is required because Chirper uses forum channels for its posts.
+
+<Steps>
+  <Step title="Open Server Settings">
+    Open your Discord server, then open **Server Settings**.
+  </Step>
+  <Step title="Go to Enable Community">
+    Navigate to **Enable Community**.
+  </Step>
+  <Step title="Complete Discord's setup">
+    Follow Discord's setup process and complete the required steps.
+  </Step>
+</Steps>
+
+Once Community is enabled, you can create the forum channel that Chirper needs.
+
+<Note>
+  Discord may change the location or wording of its settings as the platform is updated.
+</Note>
+
+## Step 3 — Create the required roles and channels
+
+Before configuring Chirper, create the roles and channels it will use. These are required for a basic Chirper setup.
+
+### Required roles
+
+For a basic setup, you need at least one **Manager Role** and one **Moderator Role**.
+
+| Role | Minimum | Purpose |
+| --- | --- | --- |
+| Manager Role | 1 role | Gives selected members permission to manage your server's Chirper settings. |
+| Moderator Role | 1 role | Gives selected members permission to moderate Chirper posts, reports, and profiles. |
+
+<Tip>
+  If your server already has roles you'd like to use for Chirper's Manager or Moderator permissions, you can use those instead of creating new ones.
+</Tip>
+
+You can select multiple roles for both the Manager Role and Moderator Role during configuration.
+
+### Required channels
+
+| Channel | Purpose |
+| --- | --- |
+| Audit Logs | Used for Chirper audit logs. |
+| Report Channel | Used for receiving Chirper reports. |
+| Post Channel | Used for Chirper posts. Must be a **forum channel**. |
+
+Once you have created all of the required roles and channels, move on to configuring Chirper.
+
+## Step 4 — Open the Chirper dashboard
+
+<Steps>
+  <Step title="Run setup">
+    Go to your bot commands channel and run `/setup`. This opens a setup interface containing a **Dashboard** button.
+  </Step>
+  <Step title="Open the dashboard">
+    Click **Dashboard** to open your server's Chirper dashboard. You'll land on the **Settings** tab.
+  </Step>
+</Steps>
+
+On the left-hand side of the **Settings** page, you'll see the following sections:
+
+- **Roles**
+- **Logging**
+- **Forums**
+- **Feeds**
+- **Misc**
+
+You can now begin configuring Chirper for your server.
+
+## Step 5 — Configure your settings
+
+### Roles
+
+Start by configuring the **Roles** section.
+
+- Under **Manager Role**, use the dropdown menu to select the role or roles that can manage your server's Chirper settings.
+- Under **Moderator Role**, use the dropdown menu to select the role or roles that can moderate Chirper posts, reports, and profiles.
+
+You can select multiple roles for both if required.
+
+### Logging
+
+Scroll down to the **Logging** section. Here, you configure your audit logs, report channel, and report ping role.
+
+- Under **Audit Logs**, select the channel you created for Chirper audit logs.
+- Under **Report Channel**, select the channel you created for receiving Chirper reports.
+- **Report Ping Role** is optional. To notify a specific role or roles whenever a new report is submitted, select them from the dropdown menu.
+
+### Forums
+
+Scroll down to the **Forums** section. This section determines where Chirper posts are sent.
+
+Under **Chirper Posts**, select the forum channel you created for Chirper posts.
+
+### Feeds
+
+The **Feeds** section contains additional feed-related options. For a basic setup, you don't need to change anything here unless your server specifically requires it.
+
+### Misc
+
+Scroll down to the **Misc** section. Under **Server Timezone**, select the timezone your server uses. Chirper uses this timezone when displaying timestamps on posts.
+
+### Save your changes
+
+When you've completed the required settings, click the orange **Save Changes** button.
+
+<Check>
+  Your basic Chirper setup is complete! Return to your bot commands channel and send your first post with `/post` to verify that Chirper is working as expected.
+</Check>
+
+### Additional configuration
+
+The settings above are the basic configuration needed to run Chirper on your server. You can return to the dashboard at any time to configure other features and settings to suit your community.
+
+## Next steps
+
+Chirper offers a variety of additional features that you can configure and use within your server. To learn about them and how to set them up, visit the features overview.
+
+<Card title="Features overview" icon="sparkles" href="/features/overview" horizontal>
+  Explore everything Chirper can do and configure it to suit your server.
+</Card>
+
+## Need further assistance?
+
+If you run into an issue during setup or need help with Chirper, open a support ticket in the official Chirper Discord server. Our support team can help with any questions or issues you encounter.
+
+<Card title="Open a support ticket" icon="life-ring" href="https://discord.gg/npa6eSxjc2" horizontal>
+  Get help from the Chirper support team.
+</Card>
