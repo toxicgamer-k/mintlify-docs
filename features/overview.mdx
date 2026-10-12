@@ -3,3 +3,172 @@ title: "Overview"
 description: "Everything you can do with Chirper."
 icon: "sparkles"
 ---
+
+Chirper is a social media platform built directly into Discord. Members post, reply, trade, and follow each other without leaving your server, making roleplay communities feel more immersive and realistic.
+
+***
+
+## Features
+
+<CardGroup cols={2}>
+  <Card title="Internet" icon="globe" href="/features/internet">
+    Post news, updates, events, and announcements, then reply, like, and repost.
+  </Card>
+
+  <Card title="Marketplace" icon="store" href="/features/marketplace">
+    List, discover, buy, and sell in-game items like vehicles and weapons.
+  </Card>
+
+  <Card title="Dark Web" icon="mask">
+    A separate, underground feed with its own forum channel and posts.
+  </Card>
+
+  <Card title="Account management" icon="user-gear" href="/features/account-management">
+    Create accounts, customize your profile, and share accounts with collaborators.
+  </Card>
+</CardGroup>
+
+***
+
+## Where you can use Chirper
+
+Everything stays in sync. A post made in Discord shows up on the web and desktop apps, and the other way around.
+
+<CardGroup cols={3}>
+  <Card title="Discord bot" icon="discord" href="https://chirper.app/invite">
+    Post, reply, and browse right inside your Discord server.
+  </Card>
+
+  <Card title="Chirper Web" icon="mobile-screen-button" href="https://chirper.app/app">
+    Use Chirper in your browser, or add it to your phone's home screen.
+  </Card>
+
+  <Card title="Chirper Desktop" icon="desktop" href="https://chirper.app/desktop">
+    A phone that floats over your game. Free for macOS and Windows.
+  </Card>
+</CardGroup>
+
+<Note>
+  Server admins choose whether members can use Chirper Web and Chirper Desktop from the **Apps** section of the dashboard.
+</Note>
+
+***
+
+## Posting
+
+Run `/post` and choose what kind of post to publish. You need a Chirper account first. Create one with `/account register`.
+
+| Type | What it does |
+| - | - |
+| **Internet Post** | A regular post to your server's main feed. |
+| **Dark Web** | A post to the Dark Web, kept separate from regular posts. |
+| **Poll** | A post with 2 to 4 options for people to vote on. |
+| **Marketplace listing** | An item for sale, created with `/market list`. |
+
+Once a post is live, people can reply, like, repost, and forward it, or save it to their bookmarks with `/bookmarks`. If your server allows it, you can also post anonymously without attaching your handle.
+
+***
+
+## Feeds and trending
+
+Chirper posts each type of content to its own forum channel, and can share previews of new posts in feed channels.
+
+<AccordionGroup>
+  <Accordion title="Normal Feed" icon="newspaper">
+    A channel where members can browse previews of every new Chirper post.
+  </Accordion>
+
+  <Accordion title="Dark Web Feed" icon="mask">
+    A channel with previews of new Dark Web posts, separate from the Normal Feed.
+  </Accordion>
+
+  <Accordion title="Trending" icon="fire">
+    Popular posts are copied to a Trending channel once they reach a set number of likes or reposts. Server admins choose the thresholds.
+  </Accordion>
+</AccordionGroup>
+
+***
+
+## Accounts and profiles
+
+| Feature | What it does |
+| - | - |
+| **Multiple accounts** | Create up to **3** accounts per server, or **5** if you boost the [Chirper support server](https://chirper.app/support). |
+| **Profiles** | Set a display name, bio, and profile picture. View anyone's profile with `/profile`. |
+| **Followers** | Follow accounts to get notified when they post. |
+| **Collaborators** | Let other members post as your account with `/collaborator add`. |
+| **Badges** | Accounts can show badges like **Verified**, **Government**, and **Business**. |
+| **Notifications** | Choose which DMs Chirper sends you with `/notifications manage`. |
+
+See [Account management](/features/account-management) for more.
+
+***
+
+## Community notes
+
+Community notes add context to a post, shown beneath it as *"Users contributed context they felt would be useful to know."*
+
+Staff can add a note to any post. Members can add notes if one of their accounts has a **Verified**, **Government**, or **Business** badge. Notes can't be added to your own posts, replies, or marketplace listings.
+
+***
+
+## Server alerts
+
+Server admins and members with a Manager Role can publish official alerts to everyone using Chirper in the server, like weather warnings or upcoming events. Alerts appear under **Server Alerts** on Chirper Web and Chirper Desktop.
+
+| Command | What it does |
+| - | - |
+| `/alert send` | Publish an alert with a title, message, category (**General**, **Weather**, or **Event**), and priority (**Normal** or **Urgent**). Alerts expire after 60 minutes unless you set a duration. |
+| `/alert list` | See every active alert. |
+| `/alert cancel` | Cancel an active alert. |
+
+***
+
+## For server admins
+
+Configure all of these from your server's [dashboard](https://chirper.app/dashboard). Run `/dashboard` in your server to open it.
+
+<AccordionGroup>
+  <Accordion title="Roles and access" icon="user-shield">
+    | Setting | What it does |
+    | - | - |
+    | **Manager Roles** | Can manage Chirper settings and profile badges. |
+    | **Moderator Roles** | Can moderate posts, reports, and profiles. |
+    | **Required Roles** | Members need one of these roles to use Chirper. Leave empty to allow everyone. |
+    | **Blacklisted Roles** | Members with these roles can't use Chirper. |
+  </Accordion>
+
+  <Accordion title="Reports and logging" icon="flag">
+    Members can report posts and profiles. Reports go to your **Report Channel**, and you can ping roles with **Report Ping**. Moderation actions are recorded in **Audit Logs**.
+  </Accordion>
+
+  <Accordion title="Bindings" icon="link">
+    Link Discord roles to Chirper accounts from the **Bindings** tab.
+
+    * **Bind Account**: a shared account anyone with the role can post as. Losing the role removes access automatically.
+    * **Bind Verification**: members with the role get their first Chirper account verified automatically. Losing the role removes the badge.
+  </Accordion>
+
+  <Accordion title="Safety" icon="shield-halved">
+    | Setting | What it does |
+    | - | - |
+    | **Banned Handle Words** | Words that can't be used in handles or display names. |
+    | **Anonymous Posts** | Turn anonymous posting on or off. |
+    | **Forum Reply Redirect** | If someone sends a regular message in a Chirper thread, Chirper deletes it and offers to repost it as a reply. |
+    | **Blacklist** | Block specific Discord users from using Chirper in your server, on both the bot and the website. |
+  </Accordion>
+
+  <Accordion title="Accounts" icon="users">
+    Find any Chirper account in your server from the **Accounts** tab to edit its profile, followers, and badges, or delete it. You can also use `/account manage` in Discord.
+  </Accordion>
+
+  <Accordion title="Support code" icon="key">
+    Run `/support code` to give the Chirper support team temporary access to edit your server's settings while they help you.
+  </Accordion>
+</AccordionGroup>
+
+***
+
+<Card title="Need help?" icon="headset" href="https://chirper.app/support">
+  Still have questions? Join our Discord server and open a support ticket for help from the Chirper team.
+</Card>
