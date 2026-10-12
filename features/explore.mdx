@@ -1,0 +1,67 @@
+---
+title: "Explore"
+description: "Search for people and posts, and find accounts to follow."
+icon: "magnifying-glass"
+---
+
+export const Screenshot = ({ src, alt, width, children }) => (
+  <figure className="not-prose my-6 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      style={{ width: width ? `${width}px` : "100%", maxWidth: "100%", height: "auto" }}
+      className="block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-3 text-center text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
+Explore helps you find people and posts in your server on [Chirper Web](https://chirper.app/app).
+
+<Screenshot src="/images/features/explore.png" alt="Search results on the Explore page of Chirper Web">
+  Searching on Explore
+</Screenshot>
+
+***
+
+## Searching
+
+Click **Explore** in the sidebar, or use the **Search Chirper** bar at the top of the right-hand sidebar. Type what you're looking for.
+
+Results are split into two groups:
+
+| Group | What it finds |
+| - | - |
+| **People** | Accounts whose handle matches your search. |
+| **Chirps** | Posts that contain your search. Replies aren't included. |
+
+<Tip>
+  You can start a search with `@` or `#`. Searching `@john` finds the same people as `john`, and `#event` finds posts that mention it.
+</Tip>
+
+Search only looks at your current server. To search another server, switch servers first.
+
+***
+
+## Recent searches
+
+Explore remembers your last 5 searches. Click one to run it again, or click **Clear** to remove them.
+
+***
+
+## Who to follow
+
+Before you search, and in the sidebar on most pages, Explore suggests accounts under **Who to follow**. Click **Follow** to follow one with your current account.
+
+See [Following](/features/internet#following) for more on followers.
+
+***
+
+<Card title="Need help?" icon="headset" href="https://chirper.app/support">
+  Still have questions? Join our Discord server and open a support ticket for help from the Chirper team.
+</Card>

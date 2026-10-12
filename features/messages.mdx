@@ -1,0 +1,93 @@
+---
+title: "Messages"
+description: "Send direct messages between Chirper accounts."
+icon: "message"
+---
+
+export const Screenshot = ({ src, alt, width, children }) => (
+  <figure className="not-prose my-6 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      style={{ width: width ? `${width}px` : "100%", maxWidth: "100%", height: "auto" }}
+      className="block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-3 text-center text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
+Messages lets Chirper accounts talk to each other privately. Send a direct message to any account in your server, with text or an image.
+
+<Note>
+  Messages is available on [Chirper Web](https://chirper.app/app) and Chirper Desktop. It isn't available through the Discord bot.
+</Note>
+
+<Screenshot src="/images/features/messages.png" alt="A direct message conversation on Chirper Web">
+  A conversation in Messages on Chirper Web
+</Screenshot>
+
+***
+
+## How it works
+
+* Messages are sent **between accounts**, not Discord users. Each of your accounts has its own inbox.
+* You can only message accounts in the **same server**.
+* [Collaborators](/account-management#collaborators) on an account can read and send messages from its inbox.
+
+***
+
+## Sending a message
+
+<Steps>
+  <Step title="Open Messages">
+    On Chirper Web, click **Messages** in the sidebar.
+  </Step>
+
+  <Step title="Find someone">
+    Search for a handle with **Search handles in this server**, or open an existing conversation.
+  </Step>
+
+  <Step title="Send your message">
+    Type in the **Message as @yourhandle** box and click **Send**. To add a picture, click the image button.
+  </Step>
+</Steps>
+
+* Messages can be up to 1,000 characters.
+* Images can be PNG, JPEG, GIF, or WebP, up to 8 MB.
+* Your sent messages show **Read** once the other account has seen them.
+
+<Tip>
+  Have more than one account? Switch accounts to see each one's inbox.
+</Tip>
+
+***
+
+## Inbox settings
+
+Open **Inbox settings** in Messages to control who can reach you.
+
+| Setting | What it does |
+| - | - |
+| **Allow messages from** | Choose **Anyone in this server**, **Handles this account follows**, or **Nobody**. |
+| **Blocked handles** | See the handles you've blocked, and **Unblock** them. |
+| **Notifications** | Choose whether to **Show banners and desktop notifications** for new messages. |
+
+If you see **This handle is not accepting messages**, that account has limited who can message it, or one of you has blocked the other.
+
+***
+
+## Blocking and reporting
+
+* **Block:** Click **Block** at the top of a conversation to stop that account from messaging you.
+* **Report:** If a message breaks your server's rules, click the **flag** next to it. The report is sent to your server's Discord report channel for moderators to review.
+
+***
+
+<Card title="Need help?" icon="headset" href="https://chirper.app/support">
+  Still have questions? Join our Discord server and open a support ticket for help from the Chirper team.
+</Card>

@@ -55,7 +55,9 @@
               "features/overview",
               "features/internet",
               "features/marketplace",
-              "features/dark-web"
+              "features/dark-web",
+              "features/messages",
+              "features/explore"
             ]
           },
           "account-management"
