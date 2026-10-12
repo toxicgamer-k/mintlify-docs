@@ -4,19 +4,38 @@ description: "Post, reply, and follow the conversation."
 icon: "globe"
 ---
 
+export const Screenshot = ({ src, alt, width, children }) => (
+  <figure className="not-prose my-6 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      style={{ width: width ? `${width}px` : "100%", maxWidth: "100%", height: "auto" }}
+      className="block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-3 text-center text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
 Chirper Internet is your server's social feed. Share news, updates, events, and announcements, then reply, like, and repost to keep the conversation going.
 
 Posts sync live between Discord, [Chirper Web](https://chirper.app/app), and Chirper Desktop.
 
 <Tabs>
   <Tab title="Discord">
-    <img src="/images/features/internet/post.png" alt="A Chirper post in a Discord forum channel" className="mx-auto block rounded-xl" noZoom />
-    <p className="mt-2 text-center text-sm opacity-70">A post in Discord from <a href="https://discord.gg/simulationsrp">SimulationsRP</a></p>
+    <Screenshot src="/images/features/internet/post.png" alt="A Chirper post in a Discord forum channel" width={440}>
+      A post in Discord from <a href="https://discord.gg/simulationsrp">SimulationsRP</a>
+    </Screenshot>
   </Tab>
 
   <Tab title="Chirper Web">
-    <img src="/images/features/internet/post-web.png" alt="A Chirper post with an image on Chirper Web" className="mx-auto block rounded-xl" noZoom />
-    <p className="mt-2 text-center text-sm opacity-70">A post on Chirper Web from <a href="https://discord.gg/simulationsrp">SimulationsRP</a></p>
+    <Screenshot src="/images/features/internet/post-web.png" alt="A Chirper post with an image on Chirper Web">
+      A post on Chirper Web from <a href="https://discord.gg/simulationsrp">SimulationsRP</a>
+    </Screenshot>
   </Tab>
 </Tabs>
 
@@ -52,8 +71,9 @@ Posts sync live between Discord, [Chirper Web](https://chirper.app/app), and Chi
   </Step>
 </Steps>
 
-<img src="/images/features/internet/post-form.png" alt="The New Post form with Account, Tags, Content, and Image fields" className="mx-auto block rounded-xl" noZoom />
-<p className="mt-2 text-center text-sm opacity-70">The New Post form</p>
+<Screenshot src="/images/features/internet/post-form.png" alt="The New Post form with Account, Tags, Content, and Image fields" width={320}>
+  The New Post form
+</Screenshot>
 
 <Tip>
   Mention another account with its `@handle`. Chirper sends them a DM letting them know.
@@ -71,8 +91,9 @@ You can post again from the same account after 10 seconds.
 
 Every post has buttons along the bottom. The number on each button shows its current count.
 
-<img src="/images/features/internet/post-buttons.png" alt="The Reply, Repost, Like, Bookmark, and more options buttons under a post" className="mx-auto block rounded-xl" noZoom />
-<p className="mt-2 text-center text-sm opacity-70">Post buttons</p>
+<Screenshot src="/images/features/internet/post-buttons.png" alt="The Reply, Repost, Like, Bookmark, and more options buttons under a post" width={300}>
+  Post buttons
+</Screenshot>
 
 | Button | What it does |
 | - | - |
@@ -114,8 +135,9 @@ Click `...` to open a private menu, then pick an action from **What would you li
   </Tab>
 </Tabs>
 
-<img src="/images/features/internet/more-options.png" alt="The more options menu showing View Profile, Add Note, Information, Forward, and Delete" className="mx-auto block rounded-xl" noZoom />
-<p className="mt-2 text-center text-sm opacity-70">The more options menu, as seen by staff</p>
+<Screenshot src="/images/features/internet/more-options.png" alt="The more options menu showing View Profile, Add Note, Information, Forward, and Delete" width={380}>
+  The more options menu, as seen by staff
+</Screenshot>
 
 ***
 
@@ -145,15 +167,17 @@ Polls show live results as a percentage for each option, along with the total vo
   <Tab title="Discord">
     Choose an option from the **Vote in this poll** menu under the poll.
 
-    <img src="/images/features/internet/poll.png" alt="A Chirper poll in Discord with results and the Vote in this poll menu" className="mx-auto block rounded-xl" noZoom />
-    <p className="mt-2 text-center text-sm opacity-70">A poll in Discord</p>
+    <Screenshot src="/images/features/internet/poll.png" alt="A Chirper poll in Discord with results and the Vote in this poll menu" width={520}>
+      A poll in Discord
+    </Screenshot>
   </Tab>
 
   <Tab title="Chirper Web">
     Click an option to vote. A checkmark shows which option you picked.
 
-    <img src="/images/features/internet/poll-web.png" alt="A Chirper poll on Chirper Web with the selected option checked" className="mx-auto block rounded-xl" noZoom />
-    <p className="mt-2 text-center text-sm opacity-70">A poll on Chirper Web</p>
+    <Screenshot src="/images/features/internet/poll-web.png" alt="A Chirper poll on Chirper Web with the selected option checked">
+      A poll on Chirper Web
+    </Screenshot>
   </Tab>
 </Tabs>
 
@@ -204,8 +228,9 @@ Your server can share previews of new posts outside the **Chirper Posts** channe
   </Card>
 </CardGroup>
 
-<img src="/images/features/internet/trending.png" alt="A trending Chirper post preview" className="mx-auto block rounded-xl" noZoom />
-<p className="mt-2 text-center text-sm opacity-70">A post in the Trending channel from <a href="https://discord.gg/gtrp">Greater Toronto Roleplay</a></p>
+<Screenshot src="/images/features/internet/trending.png" alt="A trending Chirper post preview" width={420}>
+  A post in the Trending channel from <a href="https://discord.gg/gtrp">Greater Toronto Roleplay</a>
+</Screenshot>
 
 Server admins set up feeds and trending thresholds in the **Feeds** section of the dashboard.
 
