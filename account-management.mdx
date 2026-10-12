@@ -3,3 +3,253 @@ title: "Account management"
 description: "Create and manage your Chirper accounts, and view other profiles."
 icon: "user-gear"
 ---
+
+export const Screenshot = ({ src, alt, width, children }) => (
+  <figure className="not-prose my-6 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      style={{ width: width ? `${width}px` : "100%", maxWidth: "100%", height: "auto" }}
+      className="block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-3 text-center text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
+Your Chirper account is who you are on Chirper. It's what you post, reply, like, and trade with. Each account has its own handle, profile, followers, and posts.
+
+<Tabs>
+  <Tab title="Discord">
+    <Screenshot src="/images/account-management/profile.png" alt="A Chirper profile card in Discord with following, followers, posts, and bio" width={480}>
+      A profile in Discord
+    </Screenshot>
+  </Tab>
+
+  <Tab title="Chirper Web">
+    <Screenshot src="/images/account-management/profile-web.png" alt="A Chirper profile on Chirper Web with Chirps, Replies, Media, and Likes tabs">
+      A profile on Chirper Web
+    </Screenshot>
+  </Tab>
+</Tabs>
+
+***
+
+## How accounts work
+
+* Accounts belong to **one server**. An account you make in one server doesn't exist in another.
+* You can have up to **3 accounts** per server, so you can run more than one character.
+* Every account has a unique `@handle` within the server.
+
+<Tip>
+  Boost the [Chirper support server](https://chirper.app/support) to raise your limit to **5 accounts** per server.
+</Tip>
+
+***
+
+## Creating an account
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Run /account register">
+        Run `/account register` in your server's bot commands channel. The **Account Registration** form opens.
+      </Step>
+
+      <Step title="Fill in your details">
+        | Field | Details |
+        | - | - |
+        | **Handle** | Your unique `@username`. 2 to 20 characters. |
+        | **Display Name** | The name shown on your profile and posts. Up to 40 characters. |
+        | **Profile Picture** | Optional. |
+        | **Biography** | Optional. Up to 500 characters. |
+        | **Theme** | Optional. The color of your profile and posts. |
+      </Step>
+
+      <Step title="Submit">
+        Click **Submit**. Your account is ready to use.
+      </Step>
+    </Steps>
+
+    <Screenshot src="/images/account-management/account-register.png" alt="The Account Registration form with Handle, Display Name, and Profile Picture fields" width={300}>
+      The Account Registration form
+    </Screenshot>
+  </Tab>
+
+  <Tab title="Chirper Web">
+    <Steps>
+      <Step title="Open New account">
+        On [Chirper Web](https://chirper.app/app), open the **New account** page.
+      </Step>
+
+      <Step title="Fill in your details">
+        Enter your **Handle**, **Display name**, and an optional **Bio**. Click the camera to add a profile picture. If you don't add one, Chirper uses your Discord avatar.
+      </Step>
+
+      <Step title="Create your account">
+        Click **Create account**.
+      </Step>
+    </Steps>
+
+    <Tip>
+      Already have a Chirper account in another server? Use **Quick Setup** to copy that profile instead of filling everything in again.
+    </Tip>
+
+    <Screenshot src="/images/account-management/account-register-web.png" alt="The New account page on Chirper Web with Handle, Display name, Bio, and Quick Setup">
+      Creating an account on Chirper Web
+    </Screenshot>
+  </Tab>
+</Tabs>
+
+Your server can block certain words from handles and display names.
+
+***
+
+## Viewing profiles
+
+Run `/profile` and pick a handle to view any account in the server. Leave it empty to view your own. If you have more than one account, Chirper asks which one.
+
+You can also open a profile from a post. Click `...` on the post and choose **View Profile**.
+
+On [Chirper Web](https://chirper.app/app), click a name or avatar anywhere, or click **Profile** in the sidebar to see your own.
+
+Profiles show the account's following and follower counts, number of posts, bio, and when it joined. On Chirper Web, you can also browse its **Chirps**, **Replies**, **Media**, and **Likes**.
+
+***
+
+## Editing your account
+
+<Tabs>
+  <Tab title="Discord">
+    Run `/account edit` and pick which account to edit. You can change the **Handle**, **Display Name**, **Profile Picture**, **Biography**, and **Theme**.
+
+    You can also run `/profile`, open your own profile, and click **Settings** → **Edit Account Info**.
+  </Tab>
+
+  <Tab title="Chirper Web">
+    Click **Profile** in the sidebar, then click **Edit profile**.
+  </Tab>
+</Tabs>
+
+### Themes
+
+Pick a theme to change the color of your profile and post cards.
+
+| | | | |
+| - | - | - | - |
+| Default | Charcoal | Slate | Navy |
+| Ocean Blue | Forest Green | Deep Teal | Plum |
+| Wine | Graphite | Copper | Indigo |
+| Moss | | | |
+
+***
+
+## Account settings
+
+Run `/profile` and open your own profile to manage it.
+
+| Button | What it does |
+| - | - |
+| **Settings** | Opens **Edit Account Info**, **Transfer Ownership**, and **Collaborators**. |
+| **Delete Account** | Deletes the account. |
+
+<Screenshot src="/images/account-management/profile-settings.png" alt="Your own profile in Discord with Settings and Delete Account buttons" width={480}>
+  Your own profile, with Settings and Delete Account
+</Screenshot>
+
+***
+
+## Collaborators
+
+Collaborators can post as your account. Use them for shared accounts, like a business or a department.
+
+<Steps>
+  <Step title="Invite someone">
+    Run `/collaborator add`, pick your account, and choose a member of the server.
+  </Step>
+
+  <Step title="They accept">
+    Chirper sends them a DM with **Accept** and **Decline** buttons. Once they accept, they can post as your account.
+  </Step>
+</Steps>
+
+To remove a collaborator, or cancel an invite they haven't accepted yet, run `/collaborator remove`.
+
+<AccordionGroup>
+  <Accordion title="Collaborator limits">
+    * An account can have up to **10** collaborators, including pending invites.
+    * The person you invite must be a member of the server.
+    * Only the account's owner can add or remove collaborators.
+  </Accordion>
+
+  <Accordion title="Collaborators on Chirper Web">
+    On [Chirper Web](https://chirper.app/app), open **Settings** and go to **Collaborators** to see who can post as your account.
+  </Accordion>
+</AccordionGroup>
+
+***
+
+## Transferring ownership
+
+Give an account to someone else, like when you hand a business over to a new owner.
+
+<Steps>
+  <Step title="Open Transfer Ownership">
+    Run `/profile`, open your own profile, and click **Settings** → **Transfer Ownership**.
+  </Step>
+
+  <Step title="Pick the new owner">
+    Choose the member who should receive the account.
+  </Step>
+
+  <Step title="Confirm">
+    Check the details and click **Confirm**.
+  </Step>
+</Steps>
+
+<Warning>
+  Transferring ownership **can't be undone**. The new owner gets the account's followers, posts, and everything tied to it, and you no longer own it.
+</Warning>
+
+***
+
+## Badges
+
+Badges show next to an account's name. Your server's managers give them out.
+
+* **Verified Account**
+* **Government Account**
+* **Business Account**
+* **Elected Official**
+
+Accounts with a **Verified**, **Government**, or **Business** badge can also add [community notes](/features/internet#community-notes).
+
+***
+
+## Notifications
+
+Choose which DMs Chirper sends you with `/notifications manage`. You can also change them on Chirper Web under **Settings** → **Notifications**.
+
+See [Notifications](/features/internet#notifications) for the full list.
+
+***
+
+## Boosting and account limits
+
+Boosting the [Chirper support server](https://chirper.app/support) raises your limit from 3 to **5 accounts** per server.
+
+If your boost ends while you have more than 3 accounts in a server, Chirper DMs you. You then have **24 hours** to boost again.
+
+<Warning>
+  If you don't restore your boost within 24 hours, your extra accounts are **permanently deleted**.
+</Warning>
+
+***
+
+<Card title="Need help?" icon="headset" href="https://chirper.app/support">
+  Still have questions? Join our Discord server and open a support ticket for help from the Chirper team.
+</Card>
