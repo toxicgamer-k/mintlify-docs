@@ -3,3 +3,228 @@ title: "Internet"
 description: "Post, reply, and follow the conversation."
 icon: "globe"
 ---
+
+Chirper Internet is your server's social feed. Share news, updates, events, and announcements, then reply, like, and repost to keep the conversation going.
+
+Posts sync live between Discord, [Chirper Web](https://chirper.app/app), and Chirper Desktop.
+
+<Tabs>
+  <Tab title="Discord">
+    <Frame caption="A post in Discord">
+      <img src="/images/features/internet/post.png" alt="A Chirper post in a Discord forum channel" />
+    </Frame>
+  </Tab>
+
+  <Tab title="Chirper Web">
+    <Frame caption="A post on Chirper Web">
+      <img src="/images/features/internet/post-web.png" alt="A Chirper post with an image on Chirper Web" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+***
+
+## Before you start
+
+* You need a Chirper account in the server. Create one with `/account register`.
+* Your server admins need to set up a **Chirper Posts** forum channel. See [Getting started](/getting-started).
+
+***
+
+## Making a post
+
+<Steps>
+  <Step title="Run /post">
+    Run `/post` and choose **Internet Post**.
+  </Step>
+
+  <Step title="Fill in your post">
+    The **New Post** form opens. Share text, an image, or both.
+
+    | Field | Details |
+    | - | - |
+    | **Account** | Which of your accounts to post from. |
+    | **Tags** | Optional. Pick up to 5 tags from your server's forum. They show as hashtags on your post. |
+    | **Content** | Up to 1,000 characters. |
+    | **Image** | Optional. PNG, JPEG, GIF, or WebP. |
+  </Step>
+
+  <Step title="Submit">
+    Click **Submit**. Your post is published to the **Chirper Posts** channel.
+  </Step>
+</Steps>
+
+<Frame caption="The New Post form">
+  <img src="/images/features/internet/post-form.png" alt="The New Post form with Account, Tags, Content, and Image fields" />
+</Frame>
+
+<Tip>
+  Mention another account with its `@handle`. Chirper sends them a DM letting them know.
+</Tip>
+
+You can post again from the same account after 10 seconds.
+
+<Note>
+  On [Chirper Web](https://chirper.app/app), click **Chirp** in the sidebar to make a post, or use the **Chirp your reply** box under a post to reply.
+</Note>
+
+***
+
+## Interacting with posts
+
+Every post has buttons along the bottom. The number on each button shows its current count.
+
+<Frame caption="Post buttons">
+  <img src="/images/features/internet/post-buttons.png" alt="The Reply, Repost, Like, Bookmark, and more options buttons under a post" />
+</Frame>
+
+| Button | What it does |
+| - | - |
+| **Reply** | Reply to the post. Replies can include text and an image. |
+| **Repost** | Share the post from your account. Chirper adds a message to the post's thread saying you reposted it. |
+| **Like** | Like the post. |
+| **Bookmark** | Save the post. Find your saved posts with `/bookmarks`. |
+| **More options** (`...`) | Open more actions for the post. See below. |
+
+### More options
+
+Click `...` to open a private menu, then pick an action from **What would you like to do?**. The actions you see depend on whose post it is.
+
+<Tabs>
+  <Tab title="Your posts">
+    | Action | What it does |
+    | - | - |
+    | **Edit** | Change your post. |
+    | **Delete** | Remove your post. |
+  </Tab>
+
+  <Tab title="Other posts">
+    | Action | What it does |
+    | - | - |
+    | **View Profile** | Open the author's profile. |
+    | **Follow** | Get notified when this account posts. |
+    | **Add Note** | Add a community note. Only shown if you're eligible. |
+    | **Report** | Report the post to your server's moderators. |
+  </Tab>
+
+  <Tab title="Staff">
+    | Action | What it does |
+    | - | - |
+    | **View Profile** | Open the author's profile. |
+    | **Add Note** | Add a community note. |
+    | **Information** | See who created the post. |
+    | **Forward** | Copy the post to another channel with a *Forwarded by* header. Managers only. |
+    | **Delete** | Remove the post. |
+  </Tab>
+</Tabs>
+
+<Frame caption="The more options menu, as seen by staff">
+  <img src="/images/features/internet/more-options.png" alt="The more options menu showing View Profile, Add Note, Information, Forward, and Delete" />
+</Frame>
+
+***
+
+## Polls
+
+Ask a question and let everyone vote.
+
+<Steps>
+  <Step title="Run /post">
+    Run `/post` and choose **Poll**.
+  </Step>
+
+  <Step title="Fill in your poll">
+    | Field | Details |
+    | - | - |
+    | **Question** | Up to 1,000 characters. |
+    | **Options** | 2 to 4 options, one per line. Each can be up to 50 characters. |
+    | **Duration** | 1 hour, 6 hours, 24 hours, 3 days, or 7 days. |
+  </Step>
+</Steps>
+
+### Voting
+
+Polls show live results as a percentage for each option, along with the total votes and when the poll ends.
+
+<Tabs>
+  <Tab title="Discord">
+    Choose an option from the **Vote in this poll** menu under the poll.
+
+    <Frame caption="A poll in Discord">
+      <img src="/images/features/internet/poll.png" alt="A Chirper poll in Discord with results and the Vote in this poll menu" />
+    </Frame>
+  </Tab>
+
+  <Tab title="Chirper Web">
+    Click an option to vote. A checkmark shows which option you picked.
+
+    <Frame caption="A poll on Chirper Web">
+      <img src="/images/features/internet/poll-web.png" alt="A Chirper poll on Chirper Web with the selected option checked" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+***
+
+## Community notes
+
+Community notes add helpful context to a post. They appear below the post under *"Users contributed context they felt would be useful to know."*
+
+{/* TODO: add community-note.png screenshot here */}
+
+<AccordionGroup>
+  <Accordion title="Who can add a note?">
+    Staff can add a note to any post. Other members can add notes if one of their accounts has a **Verified**, **Government**, or **Business** badge.
+  </Accordion>
+
+  <Accordion title="Where can notes go?">
+    Notes can be added to posts, but not to replies, marketplace listings, or your own posts.
+  </Accordion>
+</AccordionGroup>
+
+***
+
+## Notifications
+
+Chirper keeps you in the loop with DMs.
+
+| Notification | When you get it |
+| - | - |
+| **Mentions** | Someone mentions one of your accounts in a post or reply. |
+| **New posts** | An account you follow publishes a new post. |
+
+Choose which DMs you receive with `/notifications manage`.
+
+***
+
+## Feeds and trending
+
+Your server can share previews of new posts outside the **Chirper Posts** channel.
+
+<CardGroup cols={2}>
+  <Card title="Normal Feed" icon="newspaper">
+    A channel with previews of every new Chirper post.
+  </Card>
+
+  <Card title="Trending" icon="fire">
+    Popular posts are copied here once they reach a set number of likes or reposts.
+  </Card>
+</CardGroup>
+
+<Frame caption="A post in the Trending channel">
+  <img src="/images/features/internet/trending.png" alt="A trending Chirper post preview" />
+</Frame>
+
+Server admins set up feeds and trending thresholds in the **Feeds** section of the dashboard.
+
+***
+
+## Reporting a post
+
+If a post breaks your server's rules, open **More options** (`...`) and click **Report**. Your report is sent to the server's moderators. You can send another report after 2 minutes.
+
+***
+
+<Card title="Need help?" icon="headset" href="https://chirper.app/support">
+  Still have questions? Join our Discord server and open a support ticket for help from the Chirper team.
+</Card>
