@@ -55,9 +55,10 @@
               "features/overview",
               "features/internet",
               "features/marketplace",
-              "features/account-management"
+              "features/dark-web"
             ]
-          }
+          },
+          "account-management"
         ]
       },
       {
@@ -72,6 +73,11 @@
     {
       "source": "/commands/overview",
       "destination": "/commands",
+      "permanent": true
+    },
+    {
+      "source": "/features/account-management",
+      "destination": "/account-management",
       "permanent": true
     }
   ],

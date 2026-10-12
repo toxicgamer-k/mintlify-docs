@@ -1,0 +1,156 @@
+---
+title: "Dark Web"
+description: "Post and trade underground, away from the main feed."
+icon: "mask"
+---
+
+export const Screenshot = ({ src, alt, width, children }) => (
+  <figure className="not-prose my-6 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      style={{ width: width ? `${width}px` : "100%", maxWidth: "100%", height: "auto" }}
+      className="block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-3 text-center text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
+The Dark Web is Chirper's underground, built for criminal and black-market roleplay. It has its own posts, its own marketplace, and its own look, kept separate from your server's main feed.
+
+*What happens here stays here.*
+
+<Tabs>
+  <Tab title="Discord">
+    <Screenshot src="/images/features/dark-web/darkweb-post.png" alt="An anonymous Dark Web post in Discord with a .onion address bar" width={420}>
+      A Dark Web post in Discord
+    </Screenshot>
+  </Tab>
+
+  <Tab title="Chirper Web">
+    <Screenshot src="/images/features/dark-web/darkweb-web.png" alt="The Dark Web feed on Chirper Web">
+      The Dark Web on Chirper Web from <a href="https://discord.gg/gtrp">Greater Toronto Roleplay</a>
+    </Screenshot>
+  </Tab>
+</Tabs>
+
+***
+
+## Before you start
+
+* You need a Chirper account. Create one with `/account register`.
+* Your server admins can set a separate **Dark Web Posts** forum channel in the dashboard. If they don't, Dark Web posts are published to the regular **Chirper Posts** channel.
+
+***
+
+## How it's different
+
+Dark Web posts work like [Internet posts](/features/internet), with a few changes.
+
+| | Internet | Dark Web |
+| - | - | - |
+| **Look** | Regular Chirper post | Dark card with a `.onion` address |
+| **Channel** | Chirper Posts | Dark Web Posts |
+| **Replies** | <Icon icon="check" /> | <Icon icon="check" /> |
+| **Likes** | <Icon icon="check" /> | <Icon icon="check" /> |
+| **Reposts** | <Icon icon="check" /> | <Icon icon="xmark" /> |
+| **Bookmarks** | <Icon icon="check" /> | Not in Discord |
+| **Polls** | <Icon icon="check" /> | <Icon icon="xmark" /> |
+| **Anonymous posting** | <Icon icon="check" /> | <Icon icon="check" /> |
+| **Badges** | Shown | Hidden |
+| **On your profile** | Shown | Hidden |
+
+<Tip>
+  Post as **@anonymous** to keep your identity hidden. Server staff can still see who made an anonymous post, so they can moderate it if needed.
+</Tip>
+
+***
+
+## Making a Dark Web post
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Run /post">
+        Run `/post` in your bot commands channel and choose **Dark Web**.
+      </Step>
+
+      <Step title="Fill in your post">
+        Pick an **Account**, or **@anonymous** if your server allows it. Write your post in **Content** and optionally add an **Image**.
+      </Step>
+
+      <Step title="Submit">
+        Click **Submit**. Your post is published to the Dark Web.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Chirper Web">
+    <Steps>
+      <Step title="Open the Dark Web">
+        On [Chirper Web](https://chirper.app/app), click **Dark Web** in the sidebar.
+      </Step>
+
+      <Step title="Click Post">
+        Click **Post** in the sidebar.
+      </Step>
+
+      <Step title="Write and post">
+        Pick your account, write your post, and optionally add an image. Then publish it.
+      </Step>
+    </Steps>
+
+    <Screenshot src="/images/features/dark-web/darkweb-post-web.png" alt="An anonymous Dark Web post open on Chirper Web with a reply">
+      A Dark Web post on Chirper Web
+    </Screenshot>
+  </Tab>
+</Tabs>
+
+***
+
+## Dark Web Marketplace
+
+Buy and sell illegal goods away from the regular marketplace. Dark Web listings work like [Marketplace listings](/features/marketplace), with the Dark Web look.
+
+<Tabs>
+  <Tab title="Discord">
+    Run `/market list` and choose **Dark Web**. Then fill in the item, price, description, and photo.
+  </Tab>
+
+  <Tab title="Chirper Web">
+    Open **Dark Web**, click **Post**, and switch the composer to **Listing**. Then fill in the item, price, description, and photo.
+  </Tab>
+</Tabs>
+
+Like Dark Web posts, Dark Web listings can't be bookmarked or listed anonymously.
+
+{/* SCREENSHOT: darkweb-listing.png, a Dark Web listing */}
+
+***
+
+## Dark Web Feed
+
+Your server can share previews of new Dark Web posts in their own **Dark Web Feed** channel, separate from the Latest Feed. If no Dark Web Feed is set, previews go to the regular feed instead.
+
+***
+
+## For server admins
+
+Set up the Dark Web in the **Forums** and **Feeds** sections of your server's [dashboard](https://chirper.app/dashboard).
+
+| Setting | Section | What it does |
+| - | - | - |
+| **Dark Web Posts** | Forums | The forum channel where Dark Web posts are published. |
+| **Dark Web Feed** | Feeds | The channel where previews of new Dark Web posts appear. |
+| **Anonymous Posts** | Misc | Turn anonymous posting on or off for both Internet and Dark Web posts. |
+
+***
+
+<Card title="Need help?" icon="headset" href="https://chirper.app/support">
+  Still have questions? Join our Discord server and open a support ticket for help from the Chirper team.
+</Card>
