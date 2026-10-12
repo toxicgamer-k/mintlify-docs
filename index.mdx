@@ -1,25 +1,61 @@
 ---
-title: "Home"
-description: "The Social Media Platform Built Directly Into Discord."
+title: "Welcome to Chirper"
+sidebarTitle: "Home"
+description: "The social media platform built directly into Discord."
 icon: "house"
-mode: "custom"
+mode: "wide"
 ---
 
 export const DocCard = ({ icon, title, href, children }) => (
   <a
     href={href}
-    className="group block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10 hover:border-[#FF4A1C] dark:hover:border-[#FF4A1C] p-6 no-underline transition-colors"
+    className="group flex flex-col rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10 hover:border-[#FF4A1C] dark:hover:border-[#FF4A1C] p-5 no-underline transition-colors"
   >
-    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FF4A1C]/10">{icon}</span>
-    <p className="mt-3 mb-0 text-lg font-semibold text-[#111112] dark:text-[#F3EFE8] group-hover:text-[#FF4A1C]">
+    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FF4A1C]/10">
+      <Icon icon={icon} size={20} color="#FF4A1C" />
+    </span>
+    <span className="mt-4 text-base font-semibold text-[#111112] dark:text-[#F3EFE8] group-hover:text-[#FF4A1C] transition-colors">
+      {title}
+    </span>
+    <span className="mt-1 text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60">{children}</span>
+  </a>
+);
+
+export const PathCard = ({ eyebrow, title, href, cta, children }) => (
+  <a
+    href={href}
+    className="group flex flex-col justify-between rounded-3xl border border-[#111112]/10 dark:border-[#F3EFE8]/10 hover:border-[#FF4A1C] dark:hover:border-[#FF4A1C] bg-[#111112]/[0.02] dark:bg-[#F3EFE8]/[0.03] p-6 sm:p-8 no-underline transition-colors"
+  >
+    <div>
+      <span className="text-xs font-semibold uppercase tracking-widest text-[#FF4A1C]">{eyebrow}</span>
+      <p className="mt-3 mb-0 text-2xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">{title}</p>
+      <p className="mt-2 mb-0 text-[#111112]/60 dark:text-[#F3EFE8]/60">{children}</p>
+    </div>
+    <span className="mt-6 inline-flex items-center gap-2 font-semibold text-[#FF4A1C]">
+      {cta}
+      <span className="transition-transform group-hover:translate-x-1">→</span>
+    </span>
+  </a>
+);
+
+export const Showcase = ({ src, alt, title, href, children }) => (
+  <a href={href} className="group block no-underline">
+    <div className="overflow-hidden rounded-3xl border border-[#111112]/10 dark:border-[#F3EFE8]/10">
+      <img
+        src={src}
+        alt={alt}
+        noZoom
+        className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
+      />
+    </div>
+    <p className="mt-4 mb-0 text-xl font-bold text-[#111112] dark:text-[#F3EFE8] group-hover:text-[#FF4A1C] transition-colors">
       {title}
     </p>
     <p className="mt-1 mb-0 text-[#111112]/60 dark:text-[#F3EFE8]/60">{children}</p>
   </a>
 );
 
-<div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 lg:pt-16">
-  <h1 className="sr-only">Chirper: The Social Media Platform Built Directly Into Discord</h1>
+<div className="not-prose">
   <img
     src="/images/home/hero-light.jpg"
     alt="The Social Media Platform Built Directly Into Discord."
@@ -33,11 +69,16 @@ export const DocCard = ({ icon, title, href, children }) => (
     noZoom
   />
 
-  <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-    <p className="m-0 text-lg sm:text-xl text-[#111112]/70 dark:text-[#F3EFE8]/70 max-w-xl">
-      Learn how to set up Chirper, get around its features, and use every command.
-    </p>
-    <div className="flex flex-wrap gap-3">
+  <div className="mt-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+    <div className="max-w-xl">
+      <p className="m-0 text-lg sm:text-xl text-[#111112]/80 dark:text-[#F3EFE8]/80">
+        Post, reply, trade, and follow each other without ever leaving your Discord server. Learn how to set up Chirper, get around its features, and use every command.
+      </p>
+      <p className="mt-3 mb-0 text-sm text-[#111112]/50 dark:text-[#F3EFE8]/50">
+        Trusted by over 600,000 users.
+      </p>
+    </div>
+    <div className="flex flex-wrap gap-3 shrink-0">
       <a
         href="/getting-started"
         className="inline-flex items-center rounded-full bg-[#FF4A1C] hover:bg-[#C3350F] px-6 py-3 font-semibold text-[#F3EFE8] no-underline transition-colors"
@@ -45,71 +86,92 @@ export const DocCard = ({ icon, title, href, children }) => (
         Get started
       </a>
       <a
-        href="/features/overview"
-        className="inline-flex items-center rounded-full border border-[#111112]/20 dark:border-[#F3EFE8]/20 hover:border-[#FF4A1C] dark:hover:border-[#FF4A1C] px-6 py-3 font-semibold text-[#111112] dark:text-[#F3EFE8] no-underline transition-colors"
+        href="https://chirper.app/invite"
+        className="inline-flex items-center gap-2 rounded-full border border-[#111112]/20 dark:border-[#F3EFE8]/20 hover:border-[#FF4A1C] dark:hover:border-[#FF4A1C] px-6 py-3 font-semibold text-[#111112] dark:text-[#F3EFE8] no-underline transition-colors"
       >
-        Explore features
+        <Icon icon="discord" size={16} />
+        Invite Chirper
       </a>
     </div>
   </div>
-</div>
 
-<div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20">
-  <h2 className="m-0 text-3xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">
+  <h2 className="mt-16 mb-0 text-2xl sm:text-3xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">
+    Where do you want to start?
+  </h2>
+  <div className="mt-6 grid gap-4 md:grid-cols-2">
+    <PathCard eyebrow="Server admins" title="Add Chirper to your server" href="/getting-started" cta="Set up Chirper">
+      Invite the bot, create your roles and channels, and configure everything from the dashboard.
+    </PathCard>
+    <PathCard eyebrow="Members" title="Make your first post" href="/features/internet" cta="Start posting">
+      Create an account with <code>/account register</code>, then share your first post with <code>/post</code>.
+    </PathCard>
+  </div>
+
+  <h2 className="mt-16 mb-0 text-2xl sm:text-3xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">
     Explore the docs
   </h2>
-  <div className="mt-6 grid gap-4 sm:grid-cols-2">
-    <DocCard icon={<Icon icon="rocket" size={20} color="#FF4A1C" />} title="Getting started" href="/getting-started">
+  <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <DocCard icon="rocket" title="Getting started" href="/getting-started">
       Invite Chirper, create your channels, and run setup.
     </DocCard>
-    <DocCard icon={<Icon icon="sparkles" size={20} color="#FF4A1C" />} title="Features" href="/features/overview">
+    <DocCard icon="sparkles" title="Features" href="/features/overview">
       An overview of everything Chirper can do.
     </DocCard>
-    <DocCard icon={<Icon icon="user-gear" size={20} color="#FF4A1C" />} title="Account management" href="/features/account-management">
-      Create and manage your accounts, and view other profiles.
+    <DocCard icon="globe" title="Internet" href="/features/internet">
+      Post, reply, run polls, and follow the conversation.
     </DocCard>
-    <DocCard icon={<Icon icon="terminal" size={20} color="#FF4A1C" />} title="Commands" href="/commands">
-      Every command and how it works.
+    <DocCard icon="store" title="Marketplace" href="/features/marketplace">
+      Buy, sell, or trade with other members.
+    </DocCard>
+    <DocCard icon="user-gear" title="Account management" href="/features/account-management">
+      Create and manage your accounts and profiles.
+    </DocCard>
+    <DocCard icon="terminal" title="Commands" href="/commands">
+      Every command and how to use it.
     </DocCard>
   </div>
-</div>
 
-<div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
-  <h2 className="m-0 text-3xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">
+  <h2 className="mt-16 mb-0 text-2xl sm:text-3xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">
     Built for your community
   </h2>
   <div className="mt-6 grid gap-6 md:grid-cols-2">
-    <a href="/features/internet" className="group block no-underline">
-      <div className="overflow-hidden rounded-3xl border border-[#111112]/10 dark:border-[#F3EFE8]/10">
-        <img
-          src="/images/home/internet.jpg"
-          alt="The Social Media Platform Built Directly Into Discord."
-          className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
-          noZoom
-        />
-      </div>
-      <p className="mt-4 mb-0 text-xl font-bold text-[#111112] dark:text-[#F3EFE8] group-hover:text-[#FF4A1C]">
-        Internet
-      </p>
-      <p className="mt-1 mb-0 text-[#111112]/60 dark:text-[#F3EFE8]/60">
-        Post, reply, and follow the conversation.
-      </p>
-    </a>
-    <a href="/features/marketplace" className="group block no-underline">
-      <div className="overflow-hidden rounded-3xl border border-[#111112]/10 dark:border-[#F3EFE8]/10">
-        <img
-          src="/images/home/marketplace.jpg"
-          alt="Buy, sell or trade. We make marketplace simple."
-          className="block w-full transition-transform duration-300 group-hover:scale-[1.02]"
-          noZoom
-        />
-      </div>
-      <p className="mt-4 mb-0 text-xl font-bold text-[#111112] dark:text-[#F3EFE8] group-hover:text-[#FF4A1C]">
-        Marketplace
-      </p>
-      <p className="mt-1 mb-0 text-[#111112]/60 dark:text-[#F3EFE8]/60">
-        Buy, sell, or trade with other members.
-      </p>
-    </a>
+    <Showcase src="/images/home/internet.jpg" alt="This is where every post starts a conversation." title="Internet" href="/features/internet">
+      News, updates, events, and announcements that make your server feel alive.
+    </Showcase>
+    <Showcase src="/images/home/marketplace.jpg" alt="Buy, sell or trade. We make marketplace simple." title="Marketplace" href="/features/marketplace">
+      List, discover, buy, and sell in-game items like vehicles and weapons.
+    </Showcase>
   </div>
+
+  <h2 className="mt-16 mb-0 text-2xl sm:text-3xl font-bold tracking-tight text-[#111112] dark:text-[#F3EFE8]">
+    Use Chirper anywhere
+  </h2>
+  <p className="mt-2 mb-0 text-[#111112]/60 dark:text-[#F3EFE8]/60">
+    Posts, replies, likes, and reposts sync live everywhere.
+  </p>
+  <div className="mt-6 grid gap-4 sm:grid-cols-3">
+    <DocCard icon="discord" title="Discord bot" href="https://chirper.app/invite">
+      Post and browse right inside your server.
+    </DocCard>
+    <DocCard icon="mobile-screen-button" title="Chirper Web" href="https://chirper.app/app">
+      Use Chirper in your browser, or add it to your home screen.
+    </DocCard>
+    <DocCard icon="desktop" title="Chirper Desktop" href="https://chirper.app/desktop">
+      An in-game phone overlay for macOS and Windows.
+    </DocCard>
+  </div>
+
+  <a
+    href="https://chirper.app/support"
+    className="group mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-3xl bg-[#FF4A1C] p-6 sm:p-8 no-underline"
+  >
+    <div>
+      <p className="m-0 text-xl font-bold text-[#F3EFE8]">Need help?</p>
+      <p className="mt-1 mb-0 text-[#F3EFE8]/80">Join our Discord server and open a support ticket for help from the Chirper team.</p>
+    </div>
+    <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#F3EFE8] px-5 py-2.5 font-semibold text-[#C3350F]">
+      <Icon icon="headset" size={16} color="#C3350F" />
+      Get support
+    </span>
+  </a>
 </div>
