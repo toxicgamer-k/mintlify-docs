@@ -4,11 +4,32 @@ description: "Use Chirper in your browser at chirper.app/app."
 icon: "globe"
 ---
 
+export const Screenshot = ({ src, alt, width, children }) => (
+  <figure className="not-prose my-6 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      style={{ width: width ? `${width}px` : "100%", maxWidth: "100%", height: "auto" }}
+      className="block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-3 text-center text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
 Chirper Web is the full Chirper app in your browser. Post, reply, trade, and message without opening Discord. Everything you do syncs live with your server's Discord, and the other way around.
 
 <Card title="Open Chirper Web" icon="arrow-up-right-from-square" href="https://chirper.app/app" horizontal>
   chirper.app/app
 </Card>
+
+<Screenshot src="/images/apps/web-home.png" alt="The Home feed on Chirper Web">
+  The Home feed on Chirper Web from <a href="https://discord.gg/fwtxrp">Fort Worth Texas Roleplay</a>
+</Screenshot>
 
 ***
 
@@ -31,15 +52,23 @@ Chirper Web is the full Chirper app in your browser. Post, reply, trade, and mes
   </Step>
 
   <Step title="Sign in with Discord">
-    Sign in with the Discord account you use in your server.
+    Click **Sign in with Discord** and sign in with the Discord account you use in your server.
+
+    <Screenshot src="/images/apps/web-sign-in.png" alt="The Chirper Web sign-in screen with a Sign in with Discord button">
+      The sign-in screen
+    </Screenshot>
   </Step>
 
   <Step title="Select a server">
-    Pick a server from **Select a server**. It lists the servers you're in that use Chirper.
+    Pick a server from **Select a server**. It lists the servers you're in that use Chirper. To use a different Discord account, click **Sign out** at the bottom.
+
+    <Screenshot src="/images/apps/web-select-server.png" alt="The Select a server screen listing servers that use Chirper">
+      Choosing a server
+    </Screenshot>
   </Step>
 </Steps>
 
-To change servers later, click **Switch** under **Your server** in the right-hand sidebar.
+To change servers later, click the server name at the top of the feed, or click **Switch** under **Your server** in the right-hand sidebar.
 
 ***
 
@@ -64,7 +93,11 @@ The big button at the bottom of the sidebar creates a post. It changes with the 
 
 ## Switching accounts
 
-If you have more than one account in a server, use the `...` menu next to your name at the bottom of the sidebar to switch between them.
+If you have more than one account in a server, click `...` next to your name at the bottom of the sidebar. The **Accounts** menu lists your accounts, with a checkmark next to the one you're using. Click another account to switch to it, or click **Create another account** to make a new one.
+
+<Screenshot src="/images/apps/web-switch-account.png" alt="The Accounts menu on Chirper Web with two accounts and Create another account">
+  Switching accounts in <a href="https://discord.gg/fwtxrp">Fort Worth Texas Roleplay</a>
+</Screenshot>
 
 ***
 
