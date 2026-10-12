@@ -45,12 +45,19 @@
         ]
       },
       {
-        "group": "Features",
+        "group": "Guides",
         "pages": [
-          "features/overview",
-          "features/internet",
-          "features/marketplace",
-          "features/account-management"
+          {
+            "group": "Features",
+            "icon": "sparkles",
+            "expanded": true,
+            "pages": [
+              "features/overview",
+              "features/internet",
+              "features/marketplace",
+              "features/account-management"
+            ]
+          }
         ]
       },
       {

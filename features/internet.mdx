@@ -21,7 +21,7 @@ export const Screenshot = ({ src, alt, width, children }) => (
   </figure>
 );
 
-Chirper Internet is your server's social feed. Share news, updates, events, and announcements, then reply, like, and repost to keep the conversation going.
+Chirper Internet covers the core social media features of Chirper. Share news, updates, events, and announcements, then reply, like, and repost to keep the conversation going.
 
 Posts sync live between Discord, [Chirper Web](https://chirper.app/app), and Chirper Desktop.
 
@@ -43,8 +43,19 @@ Posts sync live between Discord, [Chirper Web](https://chirper.app/app), and Chi
 
 ## Before you start
 
-* You need a Chirper account in the server. Create one with `/account register`.
-* Your server admins need to set up a **Chirper Posts** forum channel. See [Getting started](/getting-started).
+You need a Chirper account to post and interact. If you already have one, skip ahead to [Making a post](#making-a-post).
+
+Run `/account register` in your server's bot commands channel and fill in your details.
+
+| Field | Details |
+| - | - |
+| **Handle** | Your unique `@handle`. |
+| **Display Name** | The name shown on your profile and posts. |
+| **Profile Picture** | Optional. |
+| **Biography** | Optional. A short description for your profile. |
+| **Theme** | Optional. Customize how your profile and posts look. |
+
+See [Account management](/features/account-management) for more on accounts.
 
 ***
 
@@ -54,7 +65,7 @@ Posts sync live between Discord, [Chirper Web](https://chirper.app/app), and Chi
   <Tab title="Discord">
     <Steps>
       <Step title="Run /post">
-        Run `/post` and choose **Internet Post**.
+        Run `/post` in your bot commands channel and choose a post type: **Internet Post**, **Dark Web**, or **Poll**.
       </Step>
 
       <Step title="Fill in your post">
@@ -99,69 +110,19 @@ Posts sync live between Discord, [Chirper Web](https://chirper.app/app), and Chi
   </Tab>
 </Tabs>
 
+### After posting
+
+In Discord, Chirper sends you a private confirmation that only you can see:
+
+> **@you**, I've posted as **@handle** — your post is live!
+
+Click **View post** to jump straight to it, or click **Dismiss message** and find it in your server's **Chirper Posts** channel.
+
 <Tip>
   Mention another account with its `@handle`. Chirper sends them a DM letting them know.
 </Tip>
 
 You can post again from the same account after 10 seconds.
-
-<Note>
-  To reply on Chirper Web, open a post and use the **Chirp your reply** box at the bottom.
-</Note>
-
-***
-
-## Interacting with posts
-
-Every post has buttons along the bottom. The number on each button shows its current count.
-
-<Screenshot src="/images/features/internet/post-buttons.png" alt="The Reply, Repost, Like, Bookmark, and more options buttons under a post" width={300}>
-  Post buttons
-</Screenshot>
-
-| Button | What it does |
-| - | - |
-| **Reply** | Reply to the post. Replies can include text and an image. |
-| **Repost** | Share the post from your account. Chirper adds a message to the post's thread saying you reposted it. |
-| **Like** | Like the post. |
-| **Bookmark** | Save the post. Find your saved posts with `/bookmarks`. |
-| **More options** (`...`) | Open more actions for the post. See below. |
-
-### More options
-
-Click `...` to open a private menu, then pick an action from **What would you like to do?**. The actions you see depend on whose post it is.
-
-<Tabs>
-  <Tab title="Your posts">
-    | Action | What it does |
-    | - | - |
-    | **Edit** | Change your post. |
-    | **Delete** | Remove your post. |
-  </Tab>
-
-  <Tab title="Other posts">
-    | Action | What it does |
-    | - | - |
-    | **View Profile** | Open the author's profile. |
-    | **Follow** | Get notified when this account posts. |
-    | **Add Note** | Add a community note. Only shown if you're eligible. |
-    | **Report** | Report the post to your server's moderators. |
-  </Tab>
-
-  <Tab title="Staff">
-    | Action | What it does |
-    | - | - |
-    | **View Profile** | Open the author's profile. |
-    | **Add Note** | Add a community note. |
-    | **Information** | See who created the post. |
-    | **Forward** | Copy the post to another channel with a *Forwarded by* header. Managers only. |
-    | **Delete** | Remove the post. |
-  </Tab>
-</Tabs>
-
-<Screenshot src="/images/features/internet/more-options.png" alt="The more options menu showing View Profile, Add Note, Information, Forward, and Delete" width={380}>
-  The more options menu, as seen by staff
-</Screenshot>
 
 ***
 
@@ -177,11 +138,24 @@ Ask a question and let everyone vote.
   <Step title="Fill in your poll">
     | Field | Details |
     | - | - |
+    | **Account** | Which of your accounts to post from. |
     | **Question** | Up to 1,000 characters. |
     | **Options** | 2 to 4 options, one per line. Each can be up to 50 characters. |
     | **Duration** | 1 hour, 6 hours, 24 hours, 3 days, or 7 days. |
   </Step>
+
+  <Step title="Submit">
+    Click **Submit** to publish your poll.
+  </Step>
 </Steps>
+
+Put each option on its own line. Press **Enter** to start the next one. For example, for **"Should we host a community event?"**:
+
+```text
+Yes
+No
+Maybe
+```
 
 ### Voting
 
@@ -204,6 +178,143 @@ Polls show live results as a percentage for each option, along with the total vo
     </Screenshot>
   </Tab>
 </Tabs>
+
+***
+
+## Interacting with posts
+
+Every post has buttons along the bottom. The number on each button shows its current count.
+
+<Screenshot src="/images/features/internet/post-buttons.png" alt="The Reply, Repost, Like, Bookmark, and more options buttons under a post" width={300}>
+  Reply, Repost, Like, Bookmark, and More options
+</Screenshot>
+
+<Info>
+  If you have more than one account, Chirper asks which account to use in a private message only you can see. Click **Dismiss message** to clear it when you're done. With one account, Chirper uses it automatically.
+</Info>
+
+### Replying
+
+Click the **speech bubble** button on any post, including your own and Dark Web posts. Pick the **Account** to reply with, write your reply in **Content**, and optionally add an **Image**, then submit.
+
+On Chirper Web, open a post and use the **Chirp your reply** box at the bottom.
+
+### Liking
+
+Click the **heart** button to like a post. Click it again to remove your like.
+
+### Reposting
+
+Click the **two looping arrows** to share a post from your account. Chirper adds a message to the post's thread saying you reposted it.
+
+Reposts help posts get seen:
+
+* Depending on your server's settings, a post that gets enough reposts moves back to the top of the [Latest Feed](#feeds).
+* A post that reaches your server's repost threshold is also sent to the [Trending Feed](#feeds).
+
+### Bookmarking
+
+Click the **bookmark** button to save a post to your account's bookmarks.
+
+To see your saved posts, run `/bookmarks`. If you have bookmarks on more than one account, pick which account's bookmarks to view. Use the **arrow** buttons to move through them.
+
+| Button | What it does |
+| - | - |
+| **View post** | Open the original post. |
+| **Delete** | Remove the bookmark. |
+
+***
+
+## More options
+
+Click `...` on a post to open a private menu, then pick an action from **What would you like to do?**. The actions you see depend on whose post it is.
+
+<Tabs>
+  <Tab title="Your posts">
+    | Action | What it does |
+    | - | - |
+    | **Edit** | Change your post. |
+    | **Delete** | Remove your post. |
+  </Tab>
+
+  <Tab title="Other posts">
+    | Action | What it does |
+    | - | - |
+    | **View Profile** | Open the author's profile. |
+    | **Follow** | Follow the account. See [Following](#following). |
+    | **Add Note** | Add a community note. Only shown if you're eligible. |
+    | **Report** | Report the post to your server's moderators. |
+  </Tab>
+
+  <Tab title="Staff">
+    Members with a Manager or Moderator role get extra options.
+
+    | Action | What it does |
+    | - | - |
+    | **View Profile** | Open the author's profile. |
+    | **Add Note** | Add a community note. |
+    | **Information** | See who created the post and when. |
+    | **Forward** | Copy the post to another channel with a *Forwarded by* header. Managers only. |
+    | **Delete** | Remove the post. |
+  </Tab>
+</Tabs>
+
+<Screenshot src="/images/features/internet/more-options.png" alt="The more options menu showing View Profile, Add Note, Information, Forward, and Delete" width={380}>
+  The more options menu, as seen by staff
+</Screenshot>
+
+***
+
+## Following
+
+Follow an account to get a DM whenever it posts.
+
+<Steps>
+  <Step title="Open more options">
+    Click `...` on one of the account's posts.
+  </Step>
+
+  <Step title="Click Follow">
+    Choose **Follow**, then pick which of your accounts to follow with. Chirper always asks, even if you only have one account.
+  </Step>
+</Steps>
+
+The account you follow gets a notification that you followed them. To unfollow, repeat the same steps and choose **Unfollow**. They aren't notified when you unfollow.
+
+***
+
+## Anonymous posting
+
+Post or reply without showing which account you are. Choose **@anonymous** from the **Account** menu when you post or reply. Anonymous posting works for both Internet and Dark Web posts.
+
+* You need at least one Chirper account to post anonymously.
+* Your server admins can turn anonymous posting off.
+
+<Note>
+  Server staff can still see who made an anonymous post or reply, so they can moderate it if needed.
+</Note>
+
+***
+
+## Feeds
+
+Your server can share previews of new posts outside the **Chirper Posts** channel. You can like, repost, and reply right from a feed preview.
+
+<CardGroup cols={2}>
+  <Card title="Latest Feed" icon="newspaper">
+    Previews of every new Chirper post. Click **See More** to open the full post.
+  </Card>
+
+  <Card title="Trending Feed" icon="fire">
+    Popular posts that reach your server's like or repost threshold.
+  </Card>
+</CardGroup>
+
+<Screenshot src="/images/features/internet/trending.png" alt="A trending Chirper post preview" width={420}>
+  A post in the Trending Feed from <a href="https://discord.gg/gtrp">Greater Toronto Roleplay</a>
+</Screenshot>
+
+Server admins set up feeds and trending thresholds in the **Feeds** section of the dashboard, where the Latest Feed is called **Normal Feed**.
 
 ***
 
@@ -233,36 +344,44 @@ Chirper keeps you in the loop with DMs.
 | - | - |
 | **Mentions** | Someone mentions one of your accounts in a post or reply. |
 | **New posts** | An account you follow publishes a new post. |
+| **New followers** | Someone follows one of your accounts. |
 
 Choose which DMs you receive with `/notifications manage`.
 
 ***
 
-## Feeds and trending
+## Reporting
 
-Your server can share previews of new posts outside the **Chirper Posts** channel.
+If a post needs moderator attention, report it.
 
-<CardGroup cols={2}>
-  <Card title="Normal Feed" icon="newspaper">
-    A channel with previews of every new Chirper post.
-  </Card>
+<Steps>
+  <Step title="Open more options">
+    Click `...` on the post.
+  </Step>
 
-  <Card title="Trending" icon="fire">
-    Popular posts are copied here once they reach a set number of likes or reposts.
-  </Card>
-</CardGroup>
+  <Step title="Click Report">
+    Choose **Report**, enter your reason, and submit.
+  </Step>
+</Steps>
 
-<Screenshot src="/images/features/internet/trending.png" alt="A trending Chirper post preview" width={420}>
-  A post in the Trending channel from <a href="https://discord.gg/gtrp">Greater Toronto Roleplay</a>
-</Screenshot>
-
-Server admins set up feeds and trending thresholds in the **Feeds** section of the dashboard.
+Your report is sent to your server's moderators to review. You can send another report after 2 minutes.
 
 ***
 
-## Reporting a post
+## Dark Web
 
-If a post breaks your server's rules, open **More options** (`...`) and click **Report**. Your report is sent to the server's moderators. You can send another report after 2 minutes.
+Dark Web posts work like Internet posts, but they're built for underground and criminal roleplay. They have their own look and are published to a separate Dark Web forum channel.
+
+To make one, run `/post` and choose **Dark Web**.
+
+| Action | Dark Web posts |
+| - | - |
+| **Reply** | <Icon icon="check" /> |
+| **Like** | <Icon icon="check" /> |
+| **Repost** | <Icon icon="xmark" /> |
+| **Bookmark** | <Icon icon="xmark" /> |
+
+For buying and selling on the Dark Web, see [Marketplace](/features/marketplace).
 
 ***
 
