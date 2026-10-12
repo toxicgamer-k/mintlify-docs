@@ -4,6 +4,23 @@ description: "Invite Chirper, create your channels, and run setup."
 icon: "rocket"
 ---
 
+export const Screenshot = ({ src, alt, width, children }) => (
+  <figure className="not-prose my-6 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      style={{ width: width ? `${width}px` : "100%", maxWidth: "100%", height: "auto" }}
+      className="block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-3 text-center text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
 Add Chirper to your Discord server, create the roles and channels it needs, and configure it from the dashboard. By the end of this guide, Chirper is ready for your members to use.
 
 ***
@@ -24,13 +41,17 @@ Add Chirper to your Discord server, create the roles and channels it needs, and 
   </Step>
 
   <Step title="Authorize Chirper">
-    Pick your server, review the permissions Chirper requests, and continue through Discord's authorization process.
+    Pick your server under **Add to server**, click **Continue**, review the permissions Chirper requests, and click **Authorize**. You need the **Manage Server** permission in that server.
   </Step>
 
   <Step title="Check that Chirper joined">
     Return to your server and look for Chirper in the member list.
   </Step>
 </Steps>
+
+<Screenshot src="/images/getting-started/invite.png" alt="Discord's authorization screen for adding Chirper to a server">
+  Adding Chirper to your server
+</Screenshot>
 
 ***
 
@@ -79,11 +100,19 @@ Create these before you configure Chirper. If you already have staff roles, you 
 
 <Steps>
   <Step title="Run /setup">
-    In your bot commands channel, run `/setup`. Chirper replies with a **Dashboard** button.
+    In your bot commands channel, run `/setup`. Chirper replies with a **Dashboard** button that only you can see.
+
+    <Screenshot src="/images/getting-started/setup-reply.png" alt="Chirper's reply to /setup with a Dashboard button" width={520}>
+      Chirper's reply to `/setup`
+    </Screenshot>
   </Step>
 
   <Step title="Open the dashboard">
-    Click **Dashboard**. You land on the **Settings** tab, with **Roles**, **Logging**, **Forums**, **Feeds**, **Misc**, and **Apps** listed on the left.
+    Click **Dashboard** to open your server's dashboard on the Chirper website. You land on the **Settings** tab, which is split into sections: **Roles**, **Logging**, **Forums**, **Feeds**, **Misc**, and **Apps**.
+
+    <Screenshot src="/images/getting-started/dashboard-settings.png" alt="The Chirper dashboard Settings tab showing the Roles section">
+      The dashboard's Settings tab
+    </Screenshot>
   </Step>
 
   <Step title="Fill in each section">
