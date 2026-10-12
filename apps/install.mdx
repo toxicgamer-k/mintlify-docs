@@ -4,6 +4,22 @@ description: "Add Chirper to your Home Screen so it opens like an app."
 icon: "mobile-screen-button"
 ---
 
+export const Phone = ({ src, alt, children }) => (
+  <figure className="m-0 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      className="block w-full rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-2 text-center text-xs text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
 Add Chirper Web to your phone's Home Screen and it opens like a regular app, full screen and without the browser bar.
 
 <Note>
@@ -26,13 +42,28 @@ Add Chirper Web to your phone's Home Screen and it opens like a regular app, ful
       </Step>
 
       <Step title="Add to Home Screen">
-        Scroll down and tap **Add to Home Screen**.
+        Scroll down and tap **Add to Home Screen**. If you don't see it, tap **View More** first.
       </Step>
 
       <Step title="Open Chirper">
         Open **Chirper** from your Home Screen and sign in with Discord.
       </Step>
     </Steps>
+
+    <div className="not-prose my-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <Phone src="/images/apps/install-gate.png" alt="The Add Chirper to your Home Screen screen in Safari">
+        Step 1: Chirper in Safari
+      </Phone>
+      <Phone src="/images/apps/install-share.png" alt="Safari's Share sheet with Add to Home Screen">
+        Step 2: Add to Home Screen
+      </Phone>
+      <Phone src="/images/apps/install-home-screen.png" alt="The Chirper icon on an iPhone Home Screen">
+        Step 3: On your Home Screen
+      </Phone>
+      <Phone src="/images/apps/install-app.png" alt="Chirper open as an app on iPhone">
+        Step 4: Chirper as an app, in <a href="https://discord.gg/fwtxrp">Fort Worth Texas Roleplay</a>
+      </Phone>
+    </div>
   </Tab>
 
   <Tab title="Android">
@@ -60,7 +91,12 @@ Add Chirper Web to your phone's Home Screen and it opens like a regular app, ful
 
 ## After installing
 
-The installed app works the same as [Chirper Web](/apps/chirper-web). Everything syncs live with your server's Discord.
+The installed app works the same as [Chirper Web](/apps/chirper-web), with a layout made for phones. Everything syncs live with your server's Discord.
+
+| Where | What's there |
+| - | - |
+| **Top** | Your avatar, the server name to switch servers, and the **For you** and **Following** feeds. |
+| **Bottom bar** | **Home**, **Search**, **+** to create a post, **Notifications**, and **Messages**. |
 
 ***
 
