@@ -3,3 +3,205 @@ title: "Marketplace"
 description: "Buy, sell, or trade with other members."
 icon: "store"
 ---
+
+export const Screenshot = ({ src, alt, width, children }) => (
+  <figure className="not-prose my-6 flex flex-col items-center">
+    <img
+      src={src}
+      alt={alt}
+      noZoom
+      style={{ width: width ? `${width}px` : "100%", maxWidth: "100%", height: "auto" }}
+      className="block rounded-2xl border border-[#111112]/10 dark:border-[#F3EFE8]/10"
+    />
+    {children && (
+      <figcaption className="mt-3 text-center text-sm text-[#111112]/60 dark:text-[#F3EFE8]/60 [&_a]:text-[#FF4A1C] [&_a]:no-underline hover:[&_a]:underline">
+        {children}
+      </figcaption>
+    )}
+  </figure>
+);
+
+Chirper Marketplace gives your roleplay server an easy way to list, discover, buy, and sell in-game items. Whether you're selling a vehicle, a weapon, or looking for something specific, post a listing and let buyers come to you.
+
+<Tabs>
+  <Tab title="Discord">
+    <Screenshot src="/images/features/marketplace/listing.png" alt="A Chirper Marketplace listing in Discord with a photo, price, item name, and description" width={380}>
+      A listing in Discord
+    </Screenshot>
+  </Tab>
+
+  <Tab title="Chirper Web">
+    <Screenshot src="/images/features/marketplace/listing-web.png" alt="A Chirper Marketplace listing open on Chirper Web">
+      A listing on Chirper Web
+    </Screenshot>
+  </Tab>
+</Tabs>
+
+***
+
+## Before you start
+
+* You need a Chirper account. Create one with `/account register`.
+* Your server admins need to set a **Marketplace Channel** in the dashboard. Until they do, the marketplace isn't available in your server.
+
+***
+
+## Creating a listing
+
+<Tabs>
+  <Tab title="Discord">
+    <Steps>
+      <Step title="Run /market list">
+        Run `/market list` in your bot commands channel.
+      </Step>
+
+      <Step title="Choose a listing type">
+        Pick **Internet Listing** for the regular marketplace, or **Dark Web** for an underground listing.
+      </Step>
+
+      <Step title="Fill in your listing">
+        The **Marketplace Listing** form opens.
+
+        | Field | Details |
+        | - | - |
+        | **Account** | Which of your accounts to list the item with. |
+        | **Item** | What you're selling. Up to 20 characters. |
+        | **Price** | Your asking price. See [Pricing](#pricing). |
+        | **Description** | The item, its condition, and pickup details. 10 to 1,000 characters. |
+        | **Image** | Required. A photo of the item. |
+      </Step>
+
+      <Step title="Submit">
+        Click **Submit**. Chirper confirms your listing is live on the marketplace. Click **View listing** to jump to it.
+      </Step>
+    </Steps>
+
+    <Screenshot src="/images/features/marketplace/listing-form.png" alt="The Marketplace Listing form with Account, Item, Price, and Description fields" width={300}>
+      The Marketplace Listing form
+    </Screenshot>
+  </Tab>
+
+  <Tab title="Chirper Web">
+    <Steps>
+      <Step title="Open the Marketplace">
+        On [Chirper Web](https://chirper.app/app), click **Marketplace** in the sidebar. For a Dark Web listing, click **Dark Web** instead.
+      </Step>
+
+      <Step title="Click Sell">
+        Click **Sell** in the sidebar. On the Dark Web, click **Post** and switch to **Listing** at the top of the composer.
+      </Step>
+
+      <Step title="Fill in your listing">
+        Enter what you're selling and the price, then describe the item, its condition, and pickup details. Add a photo with the image button at the bottom. The photo is required. You can also pick tags from your server's forum.
+      </Step>
+
+      <Step title="List it">
+        Click **List**. Your listing shows up on Chirper Web and in your server's Marketplace channel.
+      </Step>
+    </Steps>
+
+    <Screenshot src="/images/features/marketplace/listing-form-web.png" alt="The listing composer on Chirper Web with item, price, description, and tags">
+      Creating a listing on Chirper Web in <a href="https://discord.gg/gtrp">Greater Toronto Roleplay</a>
+    </Screenshot>
+  </Tab>
+</Tabs>
+
+You can create another listing from the same account after 10 seconds.
+
+<Note>
+  Listings always show which account posted them. You can't list an item anonymously.
+</Note>
+
+### Pricing
+
+Enter a number, with or without a currency symbol. Chirper formats it for you. Prices can be up to 10 characters.
+
+| You enter | What it means |
+| - | - |
+| `$25` | A regular price. |
+| `$5,000` | Commas are fine. |
+| `1.5k` | Shorthand works: **k** for thousand, **m** for million, **b** for billion. |
+| `0` or `Free` | A free listing. |
+
+***
+
+## Browsing listings
+
+<Tabs>
+  <Tab title="Discord">
+    Listings are posted in your server's Marketplace channel. Each listing shows the photo, price, item, description, and seller.
+  </Tab>
+
+  <Tab title="Chirper Web">
+    Click **Marketplace** in the sidebar to browse every listing. Open a listing to see its price, when it was listed, the **Description**, and **Seller information**. Click the seller to view their profile.
+
+    | Button | What it does |
+    | - | - |
+    | **Message** | Reply to the listing. You can also use **Ask the seller a question** at the bottom. |
+    | **Save** | Bookmark the listing. |
+    | **Share** | Share the listing. |
+    | **More** | Open more actions for the listing. |
+  </Tab>
+</Tabs>
+
+***
+
+## Interacting with listings
+
+Listings have fewer buttons than regular posts. There are no likes or reposts on the marketplace.
+
+| Button | What it does |
+| - | - |
+| **Reply** | Ask the seller a question or make an offer. Replies stay on the listing. |
+| **Bookmark** | Save the listing. Find it later with `/bookmarks`. Not available on Dark Web listings. |
+| **More options** (`...`) | Open more actions for the listing. See below. |
+
+### More options
+
+Click `...` on a listing to open a private menu. The actions you see depend on whose listing it is.
+
+<Tabs>
+  <Tab title="Your listings">
+    | Action | What it does |
+    | - | - |
+    | **Edit** | Change the item, price, description, or photo. |
+    | **Delete** | Remove your listing, for example once it's sold. |
+  </Tab>
+
+  <Tab title="Other listings">
+    | Action | What it does |
+    | - | - |
+    | **View Profile** | Open the seller's profile. |
+    | **Report** | Report the listing to your server's moderators. |
+  </Tab>
+
+  <Tab title="Staff">
+    | Action | What it does |
+    | - | - |
+    | **View Profile** | Open the seller's profile. |
+    | **Information** | See who created the listing and when. |
+    | **Forward** | Copy the listing to another channel. Managers only. |
+    | **Delete** | Remove the listing. |
+  </Tab>
+</Tabs>
+
+<Tip>
+  Sold your item? Delete the listing so buyers don't keep asking about it.
+</Tip>
+
+***
+
+## Dark Web Marketplace
+
+The Dark Web Marketplace is for underground and criminal roleplay. Dark Web listings work like regular listings, but with the Dark Web look.
+
+* In Discord, run `/market list` and choose **Dark Web**.
+* On Chirper Web, open **Dark Web**, click **Post**, and switch the composer to **Listing**.
+
+Dark Web listings can't be bookmarked. See [Dark Web](/features/internet#dark-web) for Dark Web posts.
+
+***
+
+<Card title="Need help?" icon="headset" href="https://chirper.app/support">
+  Still have questions? Join our Discord server and open a support ticket for help from the Chirper team.
+</Card>
