@@ -4,45 +4,98 @@ description: "Every Chirper command and how to use it."
 icon: "terminal"
 ---
 
-## Quick start
+Chirper has a lot of commands, but you can start posting in seconds. Run `/help` in Discord at any time for a quick overview and useful links.
 
-Chirper has a lot of commands, and it can be overwhelming to get started! However, despite its appearance, you can get started posting in *seconds*.
+***
+
+## Quick start
 
 <Steps>
   <Step title="Create an account">
-    Run `/account register` to create a Chirper account within that server.
+    Run `/account register` to create a Chirper account in the server.
   </Step>
+
   <Step title="Make a post">
-    Run `/post` and fill in the contents of your post. That's it!
+    Run `/post`, choose **Internet Post**, and fill in your post. That's it!
   </Step>
 </Steps>
 
-## Command reference
+***
 
-### Account management
+## Commands
 
-| Command | Description |
-| --- | --- |
-| `/account register` | Create a new Chirper account. Chirper accounts are unique to each server you are a member of, and you may only create **three** accounts per server. |
-| `/account edit` | Edit an existing Chirper account. |
-| `/collaborator add` | Allow another server member permission to post as your account. |
-| `/collaborator remove` | Disallow another server member permission to post as your account. |
-| `/notifications manage` | Manage the DMs you get from Chirper. |
+<AccordionGroup>
+  <Accordion title="Posting" icon="pen-to-square" defaultOpen>
+    | Command | What it does |
+    | - | - |
+    | `/post` | Publish a post. Choose **Internet Post**, **Dark Web**, or **Poll**. |
+    | `/market list` | List an item on the marketplace. Choose **Internet Listing** or **Dark Web**. |
+    | `/bookmarks` | Browse and manage your saved posts. |
 
-### Posting
+    See [Internet](/features/internet), [Marketplace](/features/marketplace), and [Dark Web](/features/dark-web).
+  </Accordion>
 
-| Command | Description |
-| --- | --- |
-| `/post` | Create a new Chirper post to the **main internet feed.** |
-| `/market list` | Create a Chirper listing to the **marketplace feed.** |
+  <Accordion title="Accounts and profiles" icon="user">
+    | Command | What it does |
+    | - | - |
+    | `/account register` | Create a new Chirper account. You can have up to 3 per server. |
+    | `/account edit` | Edit one of your accounts. |
+    | `/profile` | View a Chirper profile. Leave the handle empty to view your own. |
+    | `/collaborator add` | Invite someone to post as one of your accounts. |
+    | `/collaborator remove` | Remove a collaborator, or cancel a pending invite. |
+    | `/notifications manage` | Choose which notifications you receive in DMs. |
 
-### Server admin
+    See [Account management](/account-management).
+  </Accordion>
+
+  <Accordion title="General" icon="circle-info">
+    | Command | What it does |
+    | - | - |
+    | `/help` | Learn about Chirper and get useful links. |
+    | `/ping` | Check Chirper's system status. |
+  </Accordion>
+</AccordionGroup>
+
+***
+
+## Server admin commands
 
 <Note>
-  These commands are only for server admins and are not available to regular users.
+  These commands need the **Administrator** permission in Discord, or one of your server's Chirper **Manager Roles**.
 </Note>
 
-| Command | Description |
-| --- | --- |
-| `/setup` | Set up Chirper for your server or adjust your configuration. |
-| `/account manage` | Manage any Chirper account. |
+<AccordionGroup>
+  <Accordion title="Setup" icon="gear">
+    | Command | What it does |
+    | - | - |
+    | `/setup` | Open your server's Chirper dashboard to set up Chirper. |
+    | `/dashboard` | Open your server's Chirper dashboard to configure roles and channels. |
+    | `/support code` | Give Chirper support temporary access to edit your server's settings. |
+
+    See [Getting started](/getting-started).
+  </Accordion>
+
+  <Accordion title="Accounts" icon="users-gear">
+    | Command | What it does |
+    | - | - |
+    | `/account manage` | Manage any Chirper account in the server. |
+    | `/account binding` | Manage role-bound accounts that anyone with a role can post as. |
+    | `/verification binding` | Manage roles that automatically verify a member's first account. |
+  </Accordion>
+
+  <Accordion title="Server alerts" icon="bell">
+    | Command | What it does |
+    | - | - |
+    | `/alert send` | Publish an official alert to your server's Chirper apps. Set a title, message, category, priority, and how long it lasts. |
+    | `/alert list` | List active alerts. |
+    | `/alert cancel` | Cancel an active alert. |
+
+    Alerts show under **Server Alerts** on Chirper Web and Chirper Desktop. They last 60 minutes unless you set a duration.
+  </Accordion>
+</AccordionGroup>
+
+***
+
+<Card title="Need help?" icon="headset" href="https://chirper.app/support">
+  Still have questions? Join our Discord server and open a support ticket for help from the Chirper team.
+</Card>
