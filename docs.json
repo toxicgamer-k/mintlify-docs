@@ -59,6 +59,16 @@
               "features/messages"
             ]
           },
+          {
+            "group": "Apps",
+            "icon": "grid-2",
+            "expanded": true,
+            "pages": [
+              "apps/chirper-web",
+              "apps/install",
+              "apps/desktop"
+            ]
+          },
           "account-management"
         ]
       },
