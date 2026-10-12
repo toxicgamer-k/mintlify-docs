@@ -38,6 +38,34 @@ export const PathCard = ({ eyebrow, title, href, cta, children }) => (
   </a>
 );
 
+export const TrustedBy = () => {
+  const [stats, setStats] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+    fetch("https://chirper.app/api/stats")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (active && data && data.servers > 0 && data.members > 0) setStats(data);
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  if (!stats) return <>Trusted by over 600,000 users.</>;
+
+  const format = (n) => n.toLocaleString("en-US");
+  const members = Math.floor(stats.members / 1000) * 1000;
+  return (
+    <>
+      Trusted by <strong className="font-semibold">{format(stats.servers)}</strong> servers and{" "}
+      <strong className="font-semibold">{format(members)}+</strong> members.
+    </>
+  );
+};
+
 export const Showcase = ({ src, alt, title, href, children }) => (
   <a href={href} className="group block no-underline">
     <div className="overflow-hidden rounded-3xl border border-[#111112]/10 dark:border-[#F3EFE8]/10">
@@ -75,7 +103,7 @@ export const Showcase = ({ src, alt, title, href, children }) => (
         Post, reply, trade, and follow each other without ever leaving your Discord server. Learn how to set up Chirper, get around its features, and use every command.
       </p>
       <p className="mt-3 mb-0 text-sm text-[#111112]/50 dark:text-[#F3EFE8]/50">
-        Trusted by over 600,000 users.
+        <TrustedBy />
       </p>
     </div>
     <div className="flex flex-wrap gap-3 shrink-0">
